@@ -1,0 +1,19 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class enemyCollider : MonoBehaviour 
+{
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == ("bullet"))
+        {
+            Destroy(gameObject);
+            TankController.Score.score += 100;
+            TankController.Score.countDestroy += 1;
+            /*Score.score += 100;
+            Score.countDestroy += 1;*/
+        }
+    }
+}
